@@ -13,6 +13,9 @@ import org.junit.Assert;
 
 import java.util.List;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
+
 public class SpotifySteps {
 
     private String token;
@@ -68,4 +71,15 @@ public class SpotifySteps {
         }
     }
 
+    @And("Response should contains items less than or equals to total")
+    public void validateItemSize() {
+        
+        int total = response.then()
+                .extract()
+                .jsonPath()
+                .get("categories.total");
+        
+        response.then()
+                .body("categories.items", hasSize(lessThanOrEqualTo(total)));
+    }
 }
