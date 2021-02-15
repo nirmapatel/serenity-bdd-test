@@ -16,7 +16,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
-public class SpotifySteps {
+public class CategoriesActions {
 
     private String token;
     private Response response;
