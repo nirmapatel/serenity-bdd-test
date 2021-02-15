@@ -10,4 +10,4 @@ integration_tests:
   stage: test
   script:
     - echo "running integration tests..."
-    - "mvn install"
+    - "mvn verify"
